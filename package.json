@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "serve": "webpack serve --open --mode development",
     "dev": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
