@@ -1,0 +1,64 @@
+-var customers = [{customersName: 'Jane Cooper',company: 'Microsoft',phoneNumber: '(225) 555-0118',email: 'jane@microsoft.com',country: 'United States',status: 'Active'}, {customersName: 'Floyd Miles',company: 'Yahoo',phoneNumber: '(205) 555-0100',email: 'floyd@yahoo.com',country: 'Kiribati',status: 'Inactive'}, {customersName: 'Ronald Richards',company: 'Adobe',phoneNumber: '(302) 555-0107',email: 'ronald@adobe.com',country: 'Israel',status: 'Inactive'}, {customersName: 'Marvin McKinney',company: 'Tesla',phoneNumber: '(252) 555-0126',email: 'marvin@tesla.com',country: 'Iran',status: 'Active'}, {customersName: 'Jerome Bell',company: 'Google',phoneNumber: '(629) 555-0129',email: 'jerome@google.com',country: 'Réunion',status: 'Active'}, {customersName: 'Kathryn Murphy',company: 'Microsoft',phoneNumber: '(406) 555-0120',email: 'kathryn@microsoft.com',country: 'Curaçao',status: 'Active'}, {customersName: 'Jacob Jones',company: 'Yahoo',phoneNumber: '(208) 555-0112',email: 'jacob@yahoo.com',country: 'Brazil',status: 'Active'}, {customersName: 'Kristin Watson',company: 'Facebook',phoneNumber: '(704) 555-0127',email: 'kristin@facebook.com',country: 'Åland Islands',status: 'Inactive'}]
+
+main.main
+    .main-title-block
+        h1.main__title Hello Evano 👋🏼,
+        img.mobile-menu__open(src="images/mobile-menu.svg", alt="mobile-menu")
+    section.main__content
+        .main__content-top-block
+            .main__content-top-left
+                h2.main__content-title All Customers
+                p.main__content-status Active Members
+            .main__content-top-right
+                search.search
+                    .search__input-block
+                        label.search__label-hidden(for="search") Search
+                        input.search__input(type="text", id="search" placeholder="Search")
+                        img.search__img(src="images/search-1.svg", alt="search")
+        .table-underline
+        table(id="customers")
+            thead
+                tr
+                    th(scope="col") Customer Name
+                    th(scope="col") Company
+                    th(scope="col") Phone Number
+                    th(scope="col") Email
+                    th(scope="col") Country
+                    th(scope="col") Status
+                tr
+            thead
+            tbody
+                each val in customers
+                    tr
+                        td(data-label="Customer Name") #{val.customersName}
+                        td(data-label="Company") #{val.company}
+                        td(data-label="Phone Number") #{val.phoneNumber}
+                        td(data-label="Email") #{val.email}
+                        td(data-label="Country") #{val.country}
+                        td(data-label="Status")
+                            if val.status === 'Active'
+                                button.table-btn.td-active #{val.status}
+                            else if val.status === 'Inactive'
+                                button.table-btn.td-inactive #{val.status}
+                    tr
+        .main__content-bottom-block
+            p.bottom-block-text Showing data 1 to 8 of  256K entries
+            ul.bottom-block-list
+                li.bottom-block-item
+                    a.bottom-block-link
+                        img.bottom-block-img(src="images/arrow-left.svg", alt="arrow")
+                li.bottom-block-item
+                    a.bottom-block-link.pagination-active 1
+                li.bottom-block-item
+                    a.bottom-block-link 2
+                li.bottom-block-item
+                    a.bottom-block-link 3
+                li.bottom-block-item
+                    a.bottom-block-link 4
+                li.bottom-block-item
+                    a.empty-link &hellip;
+                li.bottom-block-item
+                    a.bottom-block-link 40
+                li.bottom-block-item
+                    a.bottom-block-link
+                        img.bottom-block-img(src="images/arrow-right.svg", alt="arrow")
