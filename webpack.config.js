@@ -1,5 +1,6 @@
 const path = require("path");
 const PugPlugin = require("pug-plugin");
+const FileManagerPlugin = require("filemanager-webpack-plugin");
 
 module.exports = {
   plugins: [
@@ -17,6 +18,13 @@ module.exports = {
       css: {
         // CSS output filename
         filename: "css/[name].[contenthash:8].css",
+      },
+    }),
+    new FileManagerPlugin({
+      events: {
+        onStart: {
+          delete: ["dist"],
+        },
       },
     }),
   ],
@@ -39,6 +47,15 @@ module.exports = {
           filename: "images/[name].[ext][query]",
         },
       },
+      {
+        test: /\.js$/,
+        use: "babel-loader",
+        exclude: /node_modules/,
+      },
     ],
+  },
+  devServer: {
+    watchFiles: path.join(__dirname, "src"),
+    port: 9000,
   },
 };
