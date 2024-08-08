@@ -97,7 +97,7 @@ body {
   border-radius: 8px;
   padding: 11px 8px 11px 11px;
   min-width: 250px;
-}
+}/
 
 .dashboard-icon::before {
   content: "";
@@ -106,7 +106,7 @@ body {
   height: 24px;
   mask-position: 50% 50%;
   mask-repeat: no-repeat;
-  mask-image: url(images/key-square.svg);
+  mask-image: url(src/images/key-square.svg);
   margin-right: 14px;
 }
 
@@ -117,7 +117,7 @@ body {
   height: 24px;
   mask-position: 50% 50%;
   mask-repeat: no-repeat;
-  mask-image: url(images/3d-square-1.svg);
+  mask-image: url(src/images/3d-square-1.svg);
   margin-right: 14px;
 }
 
