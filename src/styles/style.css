@@ -138,7 +138,7 @@ body {
   height: 24px;
   mask-position: 50% 50%;
   mask-repeat: no-repeat;
-  mask-image: url(/dashboard-pug/src/images/user-square-1.svg);
+  mask-image: url(./../images/user-square-1.svg);
   margin-right: 14px;
 }
 
